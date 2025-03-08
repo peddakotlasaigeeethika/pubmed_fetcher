@@ -1,6 +1,7 @@
 import click
 from .api import fetch_pubmed_ids, fetch_paper_details, identify_non_academic_authors
 from .output import save_to_csv
+from typing import Optional
 
 @click.command()
 @click.argument("query")
@@ -14,16 +15,21 @@ def get_papers_list(query: str, debug: bool, file: Optional[str]):
     pubmed_ids = fetch_pubmed_ids(query)
     papers = fetch_paper_details(pubmed_ids)
 
+    if not isinstance(papers, list):  #  Ensure `papers` is a list
+        print(" ERROR: Expected a list but got:", type(papers))
+        return
+
     filtered_papers = []
-    for paper in papers.values():
+    for paper in papers:  #  Fix: Loop over list, not `values()`
         filtered_authors = identify_non_academic_authors(paper)
+
         if filtered_authors:
             filtered_papers.append({
-                "PubmedID": paper.get("uid"),
-                "Title": paper.get("title"),
-                "Publication Date": paper.get("pubdate"),
-                "Non-academic Author(s)": ", ".join(filtered_authors["authors"]),
-                "Company Affiliation(s)": ", ".join(filtered_authors["affiliations"]),
+                "PubmedID": paper.get("pubmed_id", "N/A"),
+                "Title": paper.get("title", "Unknown"),
+                "Publication Date": paper.get("publication_date", "Unknown"),
+                "Non-academic Author(s)": ", ".join(filtered_authors.get("authors", [])),
+                "Company Affiliation(s)": ", ".join(filtered_authors.get("affiliations", [])),
                 "Corresponding Author Email": paper.get("email", "N/A")
             })
 
