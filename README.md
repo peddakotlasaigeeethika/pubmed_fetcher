@@ -1,6 +1,8 @@
 # PubMed Research Paper Fetcher
--A Python command-line tool to fetch research papers from PubMed, identify non-academic authors affiliated with pharmaceutical or -biotech companies, and export results as a CSV file.
-# Features
+
+A Python command-line tool to fetch research papers from PubMed, identify non-academic authors affiliated with pharmaceutical or biotech companies, and export results as a CSV file.
+
+## Features
 -Fetches research papers from PubMed API using a flexible query.
 -Filters papers with at least one non-academic author (e.g., pharmaceutical/biotech affiliations).
 -Outputs results as a CSV file with key details:
@@ -22,7 +24,7 @@
  -> pyproject.toml     # Poetry configuration file   
  -> README.md          # Documentation  
 
-# Tools and Libraries Used
+## Tools and Libraries Used
 
 -PubMed API – Fetches research papers.
 -Poetry – Dependency management and packaging.
@@ -30,7 +32,7 @@
 -Requests – Makes API requests.
 -Pandas – Processes tabular data for CSV output.
 
-# Example Output
+
 
 ## Example Output (CSV Format)
 
