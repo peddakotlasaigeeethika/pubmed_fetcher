@@ -15,12 +15,12 @@ def get_papers_list(query: str, debug: bool, file: Optional[str]):
     pubmed_ids = fetch_pubmed_ids(query)
     papers = fetch_paper_details(pubmed_ids)
 
-    if not isinstance(papers, list):  #  Ensure `papers` is a list
+    if not isinstance(papers, list):  
         print(" ERROR: Expected a list but got:", type(papers))
         return
 
     filtered_papers = []
-    for paper in papers:  #  Fix: Loop over list, not `values()`
+    for paper in papers:  
         filtered_authors = identify_non_academic_authors(paper)
 
         if filtered_authors:
