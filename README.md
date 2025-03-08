@@ -19,15 +19,7 @@ A Python command-line tool to fetch research papers from PubMed, identify non-ac
 
 # Project Structure
 
-- pubmed_fetcher  
-  - pubmed_fetcher  
-   - __init__.py       
-   - api.py           
-   - cli.py            
-   - output.py       
- - tests         
- - pyproject.toml     # Poetry configuration file   
- - README.md          # Documentation  
+pubmed_fetcher/ ├── pubmed_fetcher/ │ ├── init.py # Package initializer │ ├── api.py # Handles API requests and filtering │ ├── cli.py # Command-line interface │ ├── output.py # CSV file handling functions │ ├── tests/ # Unit tests for API and CLI ├── pyproject.toml # Poetry configuration file ├── README.md # Documentation
 
 
 ## Tools and Libraries Used
@@ -45,7 +37,7 @@ A Python command-line tool to fetch research papers from PubMed, identify non-ac
 |-----------|---------------------------|------------------|------------------------|------------------------|----------------------|
 | 12345678  | Gene Therapy in 2024      | 2024-01-01       | John Doe               | ABC Biotech Inc.       | johndoe@abc.com     |
 | 23456789  | New Advances in Cancer    | 2023-05-15       | Jane Smith             | XYZ Pharmaceuticals    | janesmith@xyz.com   |
-|
+
 
 
 
