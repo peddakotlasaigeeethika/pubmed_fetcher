@@ -18,9 +18,15 @@ A Python command-line tool to fetch research papers from PubMed, identify non-ac
 
 
 # Project Structure
-
-pubmed_fetcher/ ├── pubmed_fetcher/ │ ├── init.py # Package initializer │ ├── api.py # Handles API requests and filtering │ ├── cli.py # Command-line interface │ ├── output.py # CSV file handling functions │ ├── tests/ # Unit tests for API and CLI ├── pyproject.toml # Poetry configuration file ├── README.md # Documentation
-
+pubmed_fetcher/
+├── pubmed_fetcher/
+│ ├── init.py
+│ ├── api.py
+│ ├── cli.py
+│ ├── output.py
+├── tests/
+├── pyproject.toml 
+├── README.md 
 
 ## Tools and Libraries Used
 
